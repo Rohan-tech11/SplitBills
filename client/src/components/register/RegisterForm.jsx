@@ -145,6 +145,11 @@ export default function RegisterForm() {
               type="submit"
               variant="contained"
               loading={isSubmitting}
+              sx={{ bgcolor: '#3f72af',
+              '&:hover': {
+                bgcolor: '#CE5A67', 
+              }, }}
+
             >
               Register
             </LoadingButton>

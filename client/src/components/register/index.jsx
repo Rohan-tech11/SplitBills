@@ -2,19 +2,36 @@ import { Link as RouterLink } from "react-router-dom";
 
 // @mui
 import { styled } from "@mui/material/styles";
-import { Card, Link, Container, Typography, Stack, Box } from "@mui/material";
+import { Card, Link, Container, Typography,Grid, Stack, Box } from "@mui/material";
 
 // hooks
 import useResponsive from "../../theme/hooks/useResponsive";
 import Logo from "../Logo";
 
 import RegisterForm from "./RegisterForm";
+import backgroundImage from "../../assets/loginBackground.jpg";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("md")]: {
-    display: "flex",
+  display: "flex",
+  justifyContent: "center",
+  position: "relative",
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    opacity: 0.15, 
+    transform: "scaleX(-1)",
   },
 }));
+
+
+
 
 const HeaderStyle = styled("header")(({ theme }) => ({
   top: 0,
@@ -51,6 +68,12 @@ const ContentStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(12, 0),
 }));
 
+const AppContentStyle = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 4),
+  textAlign: "center",
+}));
+
+
 export default function Login() {
   const smUp = useResponsive("up", "sm");
   const mdUp = useResponsive("up", "md");
@@ -67,16 +90,19 @@ export default function Login() {
           </Typography>
         )}
       </HeaderStyle>
-      <Container maxWidth="sm">
+
+      <Grid container justifyContent="center" spacing={4}>
+      <Grid item xs={12} md={6}>
         <ContentStyle>
-          <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
+          <Typography variant="h4" color="#3f72af" gutterBottom sx={{ mb: 3 }}>
             Get started Sign Up!
           </Typography>
 
           <RegisterForm />
-          {/* <AuthSocial />*/}
 
-          {!smUp && (
+                    {/* <AuthSocial />*/}
+
+                    {!smUp && (
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
               Already have an account? {""}
               <Link variant="subtitle2" component={RouterLink} to="/">
@@ -85,7 +111,37 @@ export default function Login() {
             </Typography>
           )}
         </ContentStyle>
-      </Container>
+      </Grid>
+
+
+          <Grid item xs={12} md={6}>
+            <ContentStyle>
+              <AppContentStyle>
+                {/* <Typography variant="h2" color="#CE5A67">
+                  Share.Split.Simple
+                </Typography> */}
+                <Typography variant="h3" color="#CE5A67" gutterBottom>
+                {/* "#3f72af" */}
+                Register for Ease Split!
+                </Typography>
+                <Typography variant="body1" color="45474B">
+                Welcome to Ease Split, the ultimate solution for managing shared expenses effortlessly! With Ease Split, you can easily split bills, track expenses, and settle debts with friends, family, or roommates hassle-free. Say goodbye to the complexities of shared finances and hello to seamless collaboration!
+                </Typography>
+                <Typography variant="h6" color="#3f72af"  sx={{ mt: 2 }}>
+                Key Features:
+                </Typography>
+                <Typography variant="body1" align="left"  sx={{ mt: 1 }}  >
+                <ul style={{ textAlign: "center", listStylePosition: "inside", paddingInlineStart: 0 }}>
+        <li>Simplify Shared Expenses</li>
+        <li>Customizable Groups</li>
+        <li>Expense Insights</li>
+    </ul>                </Typography>
+              </AppContentStyle>
+            </ContentStyle>
+          </Grid>
+
+      </Grid>
+
     </RootStyle>
   );
 }

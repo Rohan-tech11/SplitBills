@@ -1,19 +1,38 @@
 import { Link as RouterLink } from "react-router-dom";
-
 // @mui
 import { styled } from "@mui/material/styles";
-import { Card, Link, Container, Typography, Stack, Box } from "@mui/material";
-
+import { Card, Link, Container, Typography, Stack,Grid, Box} from "@mui/material";
 // hooks
 import useResponsive from "../../theme/hooks/useResponsive";
 import LoginForm from "./LoginForm";
-
 import configData from "../../config.json";
+import backgroundImage from "../../assets/loginBackground.jpg";
 
 const RootStyle = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("md")]: {
-    display: "flex",
+  display: "flex",
+  justifyContent: "center",
+  position: "relative",
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    opacity: 0.15, // Adjust the opacity value here (0.0 to 1.0)
   },
+}));
+const ContentStyle = styled("div")(({ theme }) => ({
+  maxWidth: 480,
+  margin: "auto",
+  minHeight: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  padding: theme.spacing(12, 0),
 }));
 
 const HeaderStyle = styled("header")(({ theme }) => ({
@@ -31,7 +50,6 @@ const HeaderStyle = styled("header")(({ theme }) => ({
     padding: theme.spacing(7, 5, 0, 7),
   },
 }));
-
 const SectionStyle = styled(Card)(({ theme }) => ({
   width: "100%",
   maxWidth: 464,
@@ -41,14 +59,11 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   margin: theme.spacing(2, 0, 2, 2),
 }));
 
-const ContentStyle = styled("div")(({ theme }) => ({
-  maxWidth: 480,
-  margin: "auto",
-  minHeight: "100vh",
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  padding: theme.spacing(12, 0),
+
+
+const AppContentStyle = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 4),
+  textAlign: "center",
 }));
 
 export default function Login() {
@@ -75,19 +90,42 @@ export default function Login() {
           )}
         </HeaderStyle>
 
-        <Container maxWidth="sm">
-          <ContentStyle>
-            <Typography variant="h4" gutterBottom>
-              Sign in!
-            </Typography>
+        <Grid container justifyContent="center" spacing={4}>
+          <Grid item xs={12} md={6}>
+            <ContentStyle>
+              <AppContentStyle>
+                <Typography variant="h2" color="#CE5A67">
+                  Share.Split.Simple
+                </Typography>
+                <Typography variant="h4" color="#3f72af" gutterBottom>
+                {/* "#3f72af" */}
+                  Welcome to Ease Split!
+                </Typography>
+                <Typography variant="body1" color="45474B">
+                  Effortlessly manage shared expenses with friends, roommates,
+                  or family members. Say goodbye to the hassle of splitting
+                  bills and tracking who owes what. With Ease Split, you can
+                  easily organize, track, and settle expenses in just a few
+                  taps. Whether it's splitting rent, groceries, or utilities,
+                  we've got you covered. Join the thousands already
+                  experiencing the convenience of seamless expense management!
+                </Typography>
+              </AppContentStyle>
+            </ContentStyle>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ContentStyle>
+              <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+                <Typography variant="h4" color="#3f72af" gutterBottom>
+                  Sign in!
+                </Typography>
+                <Typography sx={{ color: "text.secondary", mb: 5 }}>
+                  Enter your details below.
+                </Typography>
+                <LoginForm />
 
-            <Typography sx={{ color: "text.secondary", mb: 5 }}>
-              Enter your details below.
-            </Typography>
 
             {/* <AuthSocial />*/}
-
-            <LoginForm />
 
             {!smUp && (
               <Typography variant="body2" align="center" sx={{ mt: 3 }}>
@@ -97,8 +135,11 @@ export default function Login() {
                 </Link>
               </Typography>
             )}
-          </ContentStyle>
-        </Container>
+
+              </Box>
+            </ContentStyle>
+          </Grid>
+        </Grid>
       </RootStyle>
     </>
   );

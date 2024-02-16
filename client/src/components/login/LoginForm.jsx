@@ -112,6 +112,11 @@ export default function LoginForm() {
               type="submit"
               variant="contained"
               loading={isSubmitting}
+              sx={{ bgcolor: '#3f72af',
+              '&:hover': {
+                bgcolor: '#CE5A67', 
+              }, }}
+
             >
               Login
             </LoadingButton>
