@@ -1,0 +1,3 @@
+2024-02-17T05:44:20.468Z | INFO   | Server started in PORT | 3001
+2024-02-17T05:44:20.493Z | INFO   | DB Connection Established
+2024-02-17T05:44:52.857Z | ERROR  | [Invalid Route] /manifest.json

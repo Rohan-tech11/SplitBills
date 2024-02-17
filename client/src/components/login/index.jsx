@@ -1,7 +1,15 @@
 import { Link as RouterLink } from "react-router-dom";
 // @mui
 import { styled } from "@mui/material/styles";
-import { Card, Link, Container, Typography, Stack,Grid, Box} from "@mui/material";
+import {
+  Card,
+  Link,
+  Container,
+  Typography,
+  Stack,
+  Grid,
+  Box,
+} from "@mui/material";
 // hooks
 import useResponsive from "../../theme/hooks/useResponsive";
 import LoginForm from "./LoginForm";
@@ -59,8 +67,6 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   margin: theme.spacing(2, 0, 2, 2),
 }));
 
-
-
 const AppContentStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 4),
   textAlign: "center",
@@ -72,9 +78,9 @@ export default function Login() {
   //Function to check if the user is already logged in - check localStorage
   const user = JSON.parse(localStorage.getItem("profile"));
   //If user logged in the page is auto directed to dashboard
-  if (user) {
-    user.accessToken && (window.location.href = configData.DASHBOARD_URL);
-  }
+  // if (user) {
+  //   user.accessToken && (window.location.href = configData.DASHBOARD_URL);
+  // }
   return (
     <>
       <RootStyle>
@@ -98,7 +104,7 @@ export default function Login() {
                   Share.Split.Simple
                 </Typography>
                 <Typography variant="h4" color="#3f72af" gutterBottom>
-                {/* "#3f72af" */}
+                  {/* "#3f72af" */}
                   Welcome to Ease Split!
                 </Typography>
                 <Typography variant="body1" color="45474B">
@@ -107,15 +113,22 @@ export default function Login() {
                   bills and tracking who owes what. With Ease Split, you can
                   easily organize, track, and settle expenses in just a few
                   taps. Whether it's splitting rent, groceries, or utilities,
-                  we've got you covered. Join the thousands already
-                  experiencing the convenience of seamless expense management!
+                  we've got you covered. Join the thousands already experiencing
+                  the convenience of seamless expense management!
                 </Typography>
               </AppContentStyle>
             </ContentStyle>
           </Grid>
           <Grid item xs={12} md={6}>
             <ContentStyle>
-              <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  justifyContent: "center",
+                }}
+              >
                 <Typography variant="h4" color="#3f72af" gutterBottom>
                   Sign in!
                 </Typography>
@@ -124,18 +137,20 @@ export default function Login() {
                 </Typography>
                 <LoginForm />
 
+                {/* <AuthSocial />*/}
 
-            {/* <AuthSocial />*/}
-
-            {!smUp && (
-              <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-                Don’t have an account?{" "}
-                <Link variant="subtitle2" component={RouterLink} to="/register">
-                  Get started
-                </Link>
-              </Typography>
-            )}
-
+                {!smUp && (
+                  <Typography variant="body2" align="center" sx={{ mt: 3 }}>
+                    Don’t have an account?{" "}
+                    <Link
+                      variant="subtitle2"
+                      component={RouterLink}
+                      to="/register"
+                    >
+                      Get started
+                    </Link>
+                  </Typography>
+                )}
               </Box>
             </ContentStyle>
           </Grid>

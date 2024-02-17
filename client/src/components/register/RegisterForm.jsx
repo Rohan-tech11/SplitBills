@@ -13,7 +13,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 // component
 import Iconify from "../Iconify";
-//import { register } from "../../services/auth";
+import { register } from "../../services/auth";
 
 import useResponsive from "../../theme/hooks/useResponsive";
 
@@ -49,7 +49,7 @@ export default function RegisterForm() {
     onSubmit: async () => {
       //User Register Service call - Upon success user is redirected to dashboard
       //Register fail snackbar displays error
-      //await register(values, setShowAlert, setAlertMessage);
+      await register(values, setShowAlert, setAlertMessage);
     },
   });
 
@@ -145,11 +145,12 @@ export default function RegisterForm() {
               type="submit"
               variant="contained"
               loading={isSubmitting}
-              sx={{ bgcolor: '#3f72af',
-              '&:hover': {
-                bgcolor: '#CE5A67', 
-              }, }}
-
+              sx={{
+                bgcolor: "#3f72af",
+                "&:hover": {
+                  bgcolor: "#CE5A67",
+                },
+              }}
             >
               Register
             </LoadingButton>

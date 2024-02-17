@@ -12,9 +12,6 @@ Logo.propTypes = {
 };
 
 export default function Logo({ disabledLink = false, sx }) {
-  // OR
-  // const logo = <Box component="img" src="/static/logo.svg" sx={{ width: 40, height: 40, ...sx }} />
-
   const logo = (
     <Box sx={{ width: 180, height: 180, ...sx }}>
       <img src="/static/logo.png" alt="logo" />

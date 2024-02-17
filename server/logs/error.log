@@ -1,0 +1,13 @@
+2024-02-17T05:44:52.857Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:45:18.448Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:45:22.191Z | ERROR  | URL : /api/users/v1/login | staus : 401 | message: Invalid email Id or Password ! Error: Invalid email Id or Password !
+    at exports.userLogin (D:\splitbills\server\components\user.js:70:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-02-17T05:46:26.823Z | ERROR  | URL : /api/users/v1/register | staus : 400 | message: Email validation fail!!
+2024-02-17T05:46:48.673Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:04.359Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:07.446Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:09.412Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:10.680Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:14.838Z | ERROR  | [Invalid Route] /manifest.json
+2024-02-17T05:47:23.157Z | ERROR  | [Invalid Route] /manifest.json

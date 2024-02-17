@@ -13,7 +13,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 // component
 import Iconify from "../Iconify";
-//import { login } from "../../services/auth";
+import { login } from "../../services/auth";
 
 import useResponsive from "../../theme/hooks/useResponsive";
 
@@ -44,7 +44,7 @@ export default function LoginForm() {
     onSubmit: async () => {
       //User Login Service call - Upon success user is redirected to dashboard
       //Login fail snackbar displays error
-      //await login(values, setShowAlert, setAlertMessage);
+      await login(values, setShowAlert, setAlertMessage);
       console.log("login successfull");
     },
   });
@@ -112,11 +112,12 @@ export default function LoginForm() {
               type="submit"
               variant="contained"
               loading={isSubmitting}
-              sx={{ bgcolor: '#3f72af',
-              '&:hover': {
-                bgcolor: '#CE5A67', 
-              }, }}
-
+              sx={{
+                bgcolor: "#3f72af",
+                "&:hover": {
+                  bgcolor: "#CE5A67",
+                },
+              }}
             >
               Login
             </LoadingButton>
