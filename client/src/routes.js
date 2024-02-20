@@ -1,7 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import LogoOnlyLayout from "./layouts/LogoOnlyLayout";
 import configData from "./config.json";
-import Login from "./components/login";
+import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 
 export default function Router() {
