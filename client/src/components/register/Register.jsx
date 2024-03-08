@@ -109,8 +109,6 @@ export default function Register() {
 
             <RegisterForm />
 
-            {/* <AuthSocial />*/}
-
             {!smUp && (
               <Typography variant="body2" align="center" sx={{ mt: 3 }}>
                 Already have an account? {""}

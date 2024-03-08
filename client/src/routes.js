@@ -3,7 +3,7 @@ import LogoOnlyLayout from "./layouts/LogoOnlyLayout";
 import configData from "./config.json";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
-
+import DashboardLayout from "./layouts/dashboard";
 export default function Router() {
   return useRoutes([
     {
@@ -13,6 +13,10 @@ export default function Router() {
         { path: "", element: <Login /> },
         { path: configData.REGISTER_URL, element: <Register /> },
       ],
+    },
+    {
+      path: configData.DASHBOARD_HOME_URL,
+      element: <DashboardLayout />,
     },
   ]);
 }
