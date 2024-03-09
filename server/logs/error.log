@@ -28,3 +28,34 @@
 2024-02-20T05:58:08.816Z | ERROR  | [Invalid Route] /manifest.json
 2024-02-20T05:58:18.540Z | ERROR  | [Invalid Route] /manifest.json
 2024-02-20T05:58:20.504Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:04:27.403Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:05:16.285Z | ERROR  | URL : /api/users/v1/register | staus : 400 | message: Email Id already present please login!
+2024-03-08T05:05:40.146Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:05:46.043Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:06:06.210Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:06:28.717Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:06:50.538Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:07:00.788Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:07:12.531Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:07:23.629Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:07:28.719Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:07:43.973Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:08:29.207Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:08:36.463Z | ERROR  | URL : /api/users/v1/register | staus : 400 | message: Email Id already present please login!
+2024-03-08T05:09:13.501Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:09:25.285Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:31:26.493Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:31:27.129Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:31:28.938Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:31:37.105Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:46:00.976Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:46:16.508Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T05:46:40.665Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:10:43.983Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:10:55.461Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:11:05.000Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:11:12.984Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:11:48.630Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:18:41.325Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-08T06:18:47.356Z | ERROR  | [Invalid Route] /manifest.json
+2024-03-09T20:11:53.926Z | ERROR  | [Invalid Route] /manifest.json
