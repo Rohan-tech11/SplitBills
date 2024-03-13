@@ -1,19 +1,8 @@
 var mongoose = require("mongoose");
-var logger = require("../helper/logger");
 
 mongoose
-  .connect(
-    "mongodb://localhost:27017/easesplit"
-    //     {
-    //     maxPoolSize: 50,
-    //     wtimeoutMS: 2500,
-    //     useNewUrlParser: true
-    // }
-  )
-  .then(() => {
-    logger.info(`DB Connection Established`);
-    console.log("DB Connected");
-  })
+  .connect("mongodb://localhost:27017/easesplit")
+
   .catch((err) => {
     logger.error(`DB Connection Fail | ${err.stack}`);
     console.log(err);
@@ -48,7 +37,7 @@ const Group = new mongoose.Schema({
   },
   groupCurrency: {
     type: String,
-    default: "INR",
+    default: "CAD",
   },
   groupOwner: {
     type: String,
@@ -93,7 +82,7 @@ const Expense = new mongoose.Schema({
   },
   expenseCurrency: {
     type: String,
-    default: "INR",
+    default: "CAD",
   },
   expenseDate: {
     type: Date,

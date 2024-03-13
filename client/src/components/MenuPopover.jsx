@@ -22,8 +22,6 @@ const ArrowStyle = styled("span")(({ theme }) => ({
   },
 }));
 
-// ----------------------------------------------------------------------
-
 MenuPopover.propTypes = {
   children: PropTypes.node.isRequired,
   sx: PropTypes.object,

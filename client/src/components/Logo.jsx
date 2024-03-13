@@ -4,8 +4,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { Box } from "@mui/material";
 import configData from "../config.json";
 
-// ----------------------------------------------------------------------
-
 Logo.propTypes = {
   disabledLink: PropTypes.bool,
   sx: PropTypes.object,

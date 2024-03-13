@@ -17,8 +17,6 @@ import { login } from "../../services/auth";
 
 import useResponsive from "../../theme/hooks/useResponsive";
 
-// ----------------------------------------------------------------------
-
 export default function LoginForm() {
   const smUp = useResponsive("up", "sm");
 

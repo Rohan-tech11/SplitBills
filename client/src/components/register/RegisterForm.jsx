@@ -17,8 +17,6 @@ import { register } from "../../services/auth";
 
 import useResponsive from "../../theme/hooks/useResponsive";
 
-// ----------------------------------------------------------------------
-
 export default function RegisterForm() {
   const smUp = useResponsive("up", "sm");
 
@@ -27,6 +25,7 @@ export default function RegisterForm() {
 
   const [showPassword, setShowPassword] = useState(false);
 
+  //utilizing yup library for form data validation
   const RegisterSchema = Yup.object().shape({
     emailId: Yup.string()
       .email("Email must be a valid email address")
@@ -37,6 +36,7 @@ export default function RegisterForm() {
     firstName: Yup.string().required("First Name is required"),
   });
 
+  //formik hook for handling form state
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -47,12 +47,12 @@ export default function RegisterForm() {
     },
     validationSchema: RegisterSchema,
     onSubmit: async () => {
-      //User Register Service call - Upon success user is redirected to dashboard
-      //Register fail snackbar displays error
+      //User Register Api Service call - Upon success user is redirected to dashboard
       await register(values, setShowAlert, setAlertMessage);
     },
   });
 
+  //destructuring formik
   const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } =
     formik;
 
@@ -62,6 +62,7 @@ export default function RegisterForm() {
 
   return (
     <>
+      {/* snack bar component to display the errors */}
       {!smUp && (
         <Snackbar open={showAlert} autoHideDuration={6000}>
           <Alert severity="error" sx={{ width: "100%" }}>

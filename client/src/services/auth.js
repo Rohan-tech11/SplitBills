@@ -5,13 +5,15 @@ export const login = async (formData, setShowAlert, setAlertMessage) => {
   try {
     const { data } = await api.loginIn(formData);
     localStorage.setItem("profile", JSON.stringify(data));
-    window.location.href = configData.DASHBOARD_URL;
+    window.location.href = configData.DASHBOARD_HOME_URL;
     return data;
   } catch (err) {
     setShowAlert(true);
     err.response.status === 400 || err.response.status === 401
       ? setAlertMessage(err.response.data.message)
-      : setAlertMessage("Oops! Something went worng");
+      : setAlertMessage(
+          " Something went wrong ! please try again after sometime"
+        );
     return false;
   }
 };
@@ -26,7 +28,9 @@ export const register = async (formData, setShowAlert, setAlertMessage) => {
     setShowAlert(true);
     err.response.status === 400 || err.response.status === 401
       ? setAlertMessage(err.response.data.message)
-      : setAlertMessage("Oops! Something went worng");
+      : setAlertMessage(
+          "Oops! Something went wrong ! please try again after sometime"
+        );
     return false;
   }
 };

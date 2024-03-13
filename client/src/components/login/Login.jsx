@@ -58,13 +58,7 @@ const AppContentStyle = styled("div")(({ theme }) => ({
 
 export default function Login() {
   const smUp = useResponsive("up", "sm");
-  const mdUp = useResponsive("up", "md");
-  //Function to check if the user is already logged in - check localStorage
-  const user = JSON.parse(localStorage.getItem("profile"));
-  //If user logged in the page is auto directed to dashboard
-  // if (user) {
-  //   user.accessToken && (window.location.href = configData.DASHBOARD_URL);
-  // }
+
   return (
     <>
       <RootStyle>

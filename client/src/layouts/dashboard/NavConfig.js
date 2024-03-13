@@ -1,27 +1,25 @@
 // component
-import Iconify from '../../components/Iconify';
+import Iconify from "../../components/Iconify";
 
-import configData from '../../config.json'
-
-// ----------------------------------------------------------------------
+import configData from "../../config.json";
 
 const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 
 const navConfig = [
   {
-    title: 'dashboard',
+    title: "dashboard",
     path: configData.DASHBOARD_URL,
-    icon: getIcon('eva:pie-chart-2-fill'),
+    icon: getIcon("eva:pie-chart-2-fill"),
   },
   {
-    title: 'groups',
+    title: "groups",
     path: configData.USER_GROUPS_URL,
-    icon: getIcon('clarity:group-solid'),
+    icon: getIcon("clarity:group-solid"),
   },
   {
-    title: 'Create Group',
+    title: "Create Group",
     path: configData.CREATE_GROUP_URL,
-    icon: getIcon('fa6-solid:users-gear'),
+    icon: getIcon("fa6-solid:users-gear"),
   },
 ];
 

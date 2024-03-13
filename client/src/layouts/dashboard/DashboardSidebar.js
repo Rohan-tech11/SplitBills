@@ -3,15 +3,7 @@ import { useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 // material
 import { styled } from "@mui/material/styles";
-import {
-  Box,
-  Link,
-  Button,
-  Drawer,
-  Typography,
-  Avatar,
-  Stack,
-} from "@mui/material";
+import { Box, Link, Drawer, Typography, Avatar } from "@mui/material";
 import gravatarUrl from "gravatar-url";
 
 // hooks
@@ -25,14 +17,10 @@ import navConfig from "./NavConfig";
 
 import dataConfig from "../../config.json";
 
-// ----------------------------------------------------------------------
-
-const DRAWER_WIDTH = 280;
-
 const RootStyle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("lg")]: {
     flexShrink: 0,
-    width: DRAWER_WIDTH,
+    width: 290,
   },
 }));
 
@@ -43,8 +31,6 @@ const AccountStyle = styled("div")(({ theme }) => ({
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
   backgroundColor: theme.palette.primary["lighter"],
 }));
-
-// ----------------------------------------------------------------------
 
 DashboardSidebar.propTypes = {
   isOpenSidebar: PropTypes.bool,
@@ -62,7 +48,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     if (isOpenSidebar) {
       onCloseSidebar();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const renderContent = (
@@ -125,25 +110,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
   return (
     <RootStyle>
-      {!isDesktop && (
-        <Drawer
-          open={isOpenSidebar}
-          onClose={onCloseSidebar}
-          PaperProps={{
-            sx: { width: DRAWER_WIDTH },
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      )}
-
       {isDesktop && (
         <Drawer
           open
           variant="persistent"
           PaperProps={{
             sx: {
-              width: DRAWER_WIDTH,
+              width: 280,
               bgcolor: "background.default",
               borderRightStyle: "dashed",
             },

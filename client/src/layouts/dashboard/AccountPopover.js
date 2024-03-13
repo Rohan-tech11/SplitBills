@@ -16,30 +16,22 @@ import gravatarUrl from "gravatar-url";
 // components
 import MenuPopover from "../../components/MenuPopover";
 
-//import { logout } from '../../services/auth';
-
 import configData from "../../config.json";
-// ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
   {
     label: "Home",
-    icon: "eva:home-fill",
     linkTo: configData.DASHBOARD_URL,
   },
   {
     label: "Profile",
-    icon: "eva:person-fill",
     linkTo: configData.USER_PROFILE_URL,
   },
   {
     label: "Settings",
-    icon: "eva:settings-2-fill",
     linkTo: "#",
   },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function AccountPopover() {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -57,7 +49,7 @@ export default function AccountPopover() {
   };
 
   const handleLogOut = () => {
-    //logout()
+    //logout function in development @Vedanth
   };
 
   return (

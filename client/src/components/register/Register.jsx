@@ -2,19 +2,10 @@ import { Link as RouterLink } from "react-router-dom";
 
 // @mui
 import { styled } from "@mui/material/styles";
-import {
-  Card,
-  Link,
-  Container,
-  Typography,
-  Grid,
-  Stack,
-  Box,
-} from "@mui/material";
+import { Link, Typography, Grid, Box } from "@mui/material";
 
 // hooks
 import useResponsive from "../../theme/hooks/useResponsive";
-import Logo from "../Logo";
 
 import RegisterForm from "./RegisterForm";
 import backgroundImage from "../../assets/loginBackground.jpg";
@@ -54,15 +45,6 @@ const HeaderStyle = styled("header")(({ theme }) => ({
   },
 }));
 
-const SectionStyle = styled(Card)(({ theme }) => ({
-  width: "100%",
-  maxWidth: 464,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  margin: theme.spacing(2, 0, 2, 2),
-}));
-
 const ContentStyle = styled("div")(({ theme }) => ({
   maxWidth: 480,
   margin: "auto",
@@ -80,7 +62,6 @@ const AppContentStyle = styled("div")(({ theme }) => ({
 
 export default function Register() {
   const smUp = useResponsive("up", "sm");
-  const mdUp = useResponsive("up", "md");
   return (
     <RootStyle>
       <HeaderStyle>
@@ -127,10 +108,9 @@ export default function Register() {
                 Share.Split.Simple
               </Typography>
               <Typography variant="h3" color="#CE5A67" gutterBottom>
-                {/* "#3f72af" */}
                 Register for Ease Split!
               </Typography>
-              <Typography variant="body1" color="45474B">
+              <Typography variant="body1" color="#45474B" gutterBottom>
                 Welcome to Ease Split, the ultimate solution for managing shared
                 expenses effortlessly! With Ease Split, you can easily split
                 bills, track expenses, and settle debts with friends, family, or

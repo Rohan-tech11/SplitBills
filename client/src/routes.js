@@ -4,6 +4,8 @@ import configData from "./config.json";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import DashboardLayout from "./layouts/dashboard";
+import React from "react";
+
 export default function Router() {
   return useRoutes([
     {
