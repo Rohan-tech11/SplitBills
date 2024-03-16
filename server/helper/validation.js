@@ -18,6 +18,14 @@ exports.emailValidation = (email) => {
   }
 };
 
+exports.userValidation = async (email) => {
+  var user = await model.User.findOne({
+    emailId: email,
+  });
+  if (!user) return false;
+  else return true;
+};
+
 exports.passwordValidation = (pass) => {
   if (pass && pass.length >= 8) {
     return true;
