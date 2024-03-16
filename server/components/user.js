@@ -6,10 +6,6 @@ const apiAuth = require("../helper/apiAuthentication");
 /*
 User Registeration function
 Accepts: firstName, lastName, emailId, password 
-Validation: firstname, lastname not Null 
-            emailID - contain '@' and '.com' 
-            password - min 8, lowecase, uppercase, special character, numbers
-API: /users/v1/register
 */
 exports.userReg = async (req, res) => {
   try {
@@ -17,7 +13,7 @@ exports.userReg = async (req, res) => {
     const user = await model.User.findOne({
       emailId: req.body.emailId,
     });
-    //If email ID present in database thows error and retuen message
+    //If email ID present in database thows error and return message
     if (user) {
       const err = new Error("Email Id already present please login!");
       err.status = 400;
@@ -31,7 +27,7 @@ exports.userReg = async (req, res) => {
         validator.passwordValidation(newUser.password) &&
         validator.notNull(newUser.firstName)
       ) {
-        //Bcrypt password encription
+        //Bcrypt password encryption
         const salt = await bcrypt.genSalt(10);
         newUser.password = await bcrypt.hash(newUser.password, salt);
 

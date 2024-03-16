@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+//establishing database connection
 mongoose
   .connect("mongodb://localhost:27017/easesplit")
 
@@ -8,6 +9,7 @@ mongoose
     console.log(err);
   });
 
+//user schema
 const User = new mongoose.Schema({
   firstName: {
     type: String,
@@ -27,6 +29,7 @@ const User = new mongoose.Schema({
   },
 });
 
+//expense group schema
 const Group = new mongoose.Schema({
   groupName: {
     type: String,
@@ -60,6 +63,7 @@ const Group = new mongoose.Schema({
   },
 });
 
+//expense schema
 const Expense = new mongoose.Schema({
   groupId: {
     type: String,
@@ -106,6 +110,7 @@ const Expense = new mongoose.Schema({
   },
 });
 
+//settlement schema
 const Settlement = new mongoose.Schema({
   groupId: {
     type: String,

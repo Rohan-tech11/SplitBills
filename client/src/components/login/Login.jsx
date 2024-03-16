@@ -115,8 +115,6 @@ export default function Login() {
                 </Typography>
                 <LoginForm />
 
-                {/* <AuthSocial />*/}
-
                 {!smUp && (
                   <Typography variant="body2" align="center" sx={{ mt: 3 }}>
                     Don’t have an account?{" "}

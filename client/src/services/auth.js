@@ -34,3 +34,12 @@ export const register = async (formData, setShowAlert, setAlertMessage) => {
     return false;
   }
 };
+
+export const getEmailList = async () => {
+  try {
+    const data = await api.getEmailList();
+    return data;
+  } catch (err) {
+    return null;
+  }
+};

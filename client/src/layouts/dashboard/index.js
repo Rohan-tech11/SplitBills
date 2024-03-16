@@ -5,9 +5,11 @@ import { styled } from "@mui/material/styles";
 //
 import DashboardNavbar from "./DashboardNavbar";
 import DashboardSidebar from "./DashboardSidebar";
-import { Typography } from "@mui/material";
 
 // ----------------------------------------------------------------------
+
+const APP_BAR_MOBILE = 64;
+const APP_BAR_DESKTOP = 92;
 
 const RootStyle = styled("div")({
   display: "flex",
@@ -19,28 +21,23 @@ const MainStyle = styled("div")(({ theme }) => ({
   flexGrow: 1,
   overflow: "auto",
   minHeight: "100%",
-  paddingTop: 90,
-  justifyContent: "center",
-  alignItems: "center",
+  paddingTop: APP_BAR_MOBILE + 24,
   paddingBottom: theme.spacing(10),
   [theme.breakpoints.up("lg")]: {
-    paddingTop: 120,
+    paddingTop: APP_BAR_DESKTOP + 24,
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },
 }));
-const PlaceholderMessage = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.secondary,
-  fontStyle: "italic",
-  fontSize: "1.2rem",
-}));
+
+// ----------------------------------------------------------------------
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("profile"));
 
   useEffect(() => {
-    //If user logged in the page is  auto re directed to dashboard
+    //If user logged in the page is auto directed to dashboard
     if (user == null) {
       window.location.href = "/";
     }
@@ -53,16 +50,7 @@ export default function DashboardLayout() {
         isOpenSidebar={open}
         onCloseSidebar={() => setOpen(false)}
       />
-
       <MainStyle>
-        <MainStyle>
-          <MainStyle>
-            <PlaceholderMessage>
-              Dashboard main content is under development. Please check back
-              later -- Group -1
-            </PlaceholderMessage>
-          </MainStyle>
-        </MainStyle>
         <Outlet />
       </MainStyle>
     </RootStyle>
