@@ -5,18 +5,15 @@ exports.generateAccessToken = (user) => {
 };
 
 exports.validateToken = (req, res, next) => {
-  //Checking if authorization is present in the header if not present then access is forbidden
+  //Checking  authorization  header is present in the request header
   if (req.headers["authorization"] == null) {
-    logger.error(
-      `URL : ${req.originalUrl} | API Authentication Fail | message: Token not present`
-    );
     res.status(403).json({
-      message: "Token not present",
+      message: "JWT Token not present",
     });
   } else {
-    //getting token from request header
+    //getting token from request
     const authHeader = req.headers["authorization"];
-    //the request header contains the token "Bearer <token>", split the string and use the second value in the split array.
+    //split the string and use the second value as jwt token
     const token = authHeader.split(" ")[1];
 
     //function to verify the token

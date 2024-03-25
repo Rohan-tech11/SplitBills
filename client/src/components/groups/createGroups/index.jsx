@@ -23,16 +23,17 @@ import { createGroupService } from "../../../services/groupServices";
 import AlertBanner from "../../AlertBanner";
 import configData from "../../../config.json";
 
+//react functional component
 export default function Creategroup() {
   const mdUp = useResponsive("up", "md");
   const profile = JSON.parse(localStorage.getItem("profile"));
   const currentUser = profile?.emailId;
   const [loading, setLoading] = useState(false);
-  const [emailList, setEmailList] = useState(["rohanreddy98765@gmail.com"]);
+  const [emailList, setEmailList] = useState([]);
   const [alert, setAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
-  //Formik schema
+  //Formik schema create group react component
   const groupSchema = Yup.object().shape({
     groupName: Yup.string().required("Group name is required"),
     groupDescription: Yup.string(),
@@ -40,6 +41,7 @@ export default function Creategroup() {
     groupCategory: Yup.string().required("Category is required"),
   });
 
+  //state for the create group form
   const formik = useFormik({
     initialValues: {
       groupName: "",
@@ -50,6 +52,7 @@ export default function Creategroup() {
       groupOwner: currentUser,
     },
     validationSchema: groupSchema,
+    //backend service call
     onSubmit: async () => {
       const create_response = await createGroupService(
         values,
@@ -74,18 +77,18 @@ export default function Creategroup() {
     },
   };
 
-  //   useEffect(() => {
-  //     const getEmails = async () => {
-  //       setLoading(true);
-  //       const response = await getEmailList();
-  //       var list = response.data.user;
-  //       list.indexOf(currentUser) > -1 &&
-  //         list.splice(list.indexOf(currentUser), 1);
-  //       setEmailList(list);
-  //       setLoading(false);
-  //     };
-  //     getEmails();
-  //   }, []);
+  useEffect(() => {
+    const getEmails = async () => {
+      setLoading(true);
+      const response = await getEmailList();
+      var list = response.data.user;
+      list.indexOf(currentUser) > -1 &&
+        list.splice(list.indexOf(currentUser), 1);
+      setEmailList(list);
+      setLoading(false);
+    };
+    getEmails();
+  }, []);
 
   return (
     <Container>

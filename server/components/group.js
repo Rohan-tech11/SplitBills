@@ -2,19 +2,17 @@ const model = require("../model/schema");
 const validator = require("../helper/validation");
 
 /*
-Create Group Function This function basically create new groups
+ This  be function  create new groups
 */
 exports.createGroup = async (req, res) => {
   try {
     var newGroup = new model.Group(req.body);
     //Performing validation on the input
     if (validator.notNull(newGroup.groupName)) {
-      /*
-            Split Json is used to store the user ease-split default it is 0 value */
       var splitJson = {};
 
       for (var user of newGroup.groupMembers) {
-        //Validating the group Members exist in the DB
+        //Checking the group Members exist in the DB
         var memberCheck = await validator.userValidation(user);
         if (!memberCheck) {
           var err = new Error("Invalid member id");
@@ -27,8 +25,7 @@ exports.createGroup = async (req, res) => {
       }
 
       /*
-            Split Json will now contain an json with user email as the key and the split amount (currently 0) as the value
-            */
+            Split Json will now contain an json with user email as the key and the split amount*/
       newGroup.split = splitJson;
 
       //Validating the group Owner exist in the DB
@@ -76,3 +73,7 @@ exports.viewGroup = async (req, res) => {
     });
   }
 };
+
+//to do implement edit group functionality -- kshitiz
+//add expense to the group -- vedanth ,ayush
+//settling up the expenses --aayush

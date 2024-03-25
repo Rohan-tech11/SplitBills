@@ -47,7 +47,7 @@ export default function RegisterForm() {
     },
     validationSchema: RegisterSchema,
     onSubmit: async () => {
-      //User Register Api Service call - Upon success user is redirected to dashboard
+      //User Register Api Service call - Upon success, user is redirected to dashboard
       await register(values, setShowAlert, setAlertMessage);
     },
   });

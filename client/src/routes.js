@@ -4,6 +4,7 @@ import configData from "./config.json";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import CreateGroup from "./components/groups/createGroups";
+import ViewGroup from "./components/groups/viewGroup";
 
 import DashboardLayout from "./layouts/dashboard";
 import React from "react";
@@ -15,6 +16,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { path: configData.CREATE_GROUP_URL, element: <CreateGroup /> },
+        { path: configData.VIEW_GROUP_ROUTER_URL, element: <ViewGroup /> },
       ],
     },
 

@@ -40,7 +40,7 @@ export default function LoginForm() {
     },
     validationSchema: LoginSchema,
     onSubmit: async () => {
-      //User Login Service call - Upon success user is redirected to dashboard
+      //User Login Service call -
       //Login fail snackbar displays error
       await login(values, setShowAlert, setAlertMessage);
       console.log("login successfull");

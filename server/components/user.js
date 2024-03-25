@@ -4,7 +4,7 @@ const validator = require("../helper/validation");
 const apiAuth = require("../helper/apiAuthentication");
 
 /*
-User Registeration function
+User Registration function
 Accepts: firstName, lastName, emailId, password 
 */
 exports.userReg = async (req, res) => {
@@ -81,6 +81,42 @@ exports.userLogin = async (req, res) => {
         accessToken,
       });
     }
+  } catch (err) {
+    res.status(err.status || 500).json({
+      message: err.message,
+    });
+  }
+};
+
+//check the expense functionality -- @aayush
+
+/*
+This function is to get all the user email Id's for creating group
+
+*/
+exports.emailList = async (req, res) => {
+  try {
+    //check if the login user is same as the requested user
+    const userEmails = await model.User.find(
+      {},
+      {
+        emailId: 1,
+        _id: 0,
+      }
+    );
+    if (!userEmails) {
+      var err = new Error("User does not exist!");
+      err.status = 400;
+      throw err;
+    }
+    var emailList = [];
+    for (var email of userEmails) {
+      emailList.push(email.emailId);
+    }
+    res.status(200).json({
+      status: "Success",
+      user: emailList,
+    });
   } catch (err) {
     res.status(err.status || 500).json({
       message: err.message,

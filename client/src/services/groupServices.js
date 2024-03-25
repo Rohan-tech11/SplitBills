@@ -1,5 +1,6 @@
 import * as api from "../api/index";
 
+//backedn service call to create group
 export const createGroupService = async (data, setAlert, setAlertMessage) => {
   try {
     const create_response = await api.createGroup(data);
@@ -13,6 +14,7 @@ export const createGroupService = async (data, setAlert, setAlertMessage) => {
   }
 };
 
+//backend api is in development --@kshitiz
 export const editGroupService = async (data, setAlert, setAlertMessage) => {
   try {
     const edit_response = await api.editGroup(data);
@@ -26,6 +28,7 @@ export const editGroupService = async (data, setAlert, setAlertMessage) => {
   }
 };
 
+//be code is in progress
 export const getGroupDetailsService = async (
   data,
   setAlert,
