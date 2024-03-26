@@ -18,4 +18,7 @@ router.post("/v1/login", controller.userLogin);
 //Get all User Emalil Id
 router.get("/v1/emailList", apiAuth.validateToken, controller.emailList);
 
+//View User router
+router.post("/v1/view", apiAuth.validateToken, controller.viewUser);
+
 module.exports = router;
