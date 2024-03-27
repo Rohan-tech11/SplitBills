@@ -6,6 +6,7 @@ import Register from "./components/register/Register";
 import CreateGroup from "./components/groups/createGroups";
 import ViewGroup from "./components/groups/viewGroup";
 import Group from "./components/groups";
+import { EditGroup } from "./components/groups/editGroup";
 
 import DashboardLayout from "./layouts/dashboard";
 import React from "react";
@@ -19,6 +20,7 @@ export default function Router() {
         { path: configData.CREATE_GROUP_URL, element: <CreateGroup /> },
         { path: configData.VIEW_GROUP_ROUTER_URL, element: <ViewGroup /> },
         { path: configData.USER_GROUPS_URL, element: <Group /> },
+        { path: configData.EDIT_GROUP_ROUTER_URL, element: <EditGroup /> },
       ],
     },
 
