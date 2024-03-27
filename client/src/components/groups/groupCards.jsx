@@ -32,6 +32,7 @@ const CategoryStyle = styled("div")(({ theme }) => ({
 }));
 
 GroupCards.propTypes = {
+  id: PropTypes.number,
   color: PropTypes.string,
   icon: PropTypes.string,
   title: PropTypes.string,

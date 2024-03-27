@@ -92,6 +92,7 @@ export default function Group() {
                   sx={{ textDecoration: "none" }}
                 >
                   <GroupCards
+                    id={myGroup.id}
                     title={myGroup?.groupName}
                     description={myGroup?.groupDescription}
                     groupMembers={myGroup?.groupMembers}
