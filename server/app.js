@@ -8,6 +8,7 @@ dotenv.config();
 
 var usersRouter = require("./routes/userRouter");
 var groupRouter = require("./routes/groupRouter");
+var expenseRouter = require("./routes/expenseRouter");
 
 var app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/api/users", usersRouter);
 app.use("/api/group", apiAuth.validateToken, groupRouter);
+app.use("/api/expense", apiAuth.validateToken, expenseRouter);
 
 const port = 3001;
 app.listen(port, (err) => {

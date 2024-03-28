@@ -284,7 +284,6 @@ exports.addSplit = async (
     group.split[0][user] -= expensePerPerson;
   }
 
-  //Nullifying split - check if the group balance is zero else added the diff to owner
   let bal = 0;
   for (val of Object.entries(group.split[0])) {
     bal += val[1];
@@ -304,7 +303,6 @@ exports.addSplit = async (
 /*
 Clear Split function 
 This function is used to clear the split
-This is used for  edit expense or delete expense operation 
 */
 exports.clearSplit = async (
   groupId,

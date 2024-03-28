@@ -27,7 +27,6 @@ import {
 } from "../../../utils/helper";
 import ExpenseCard from "../../expense/expenseCard";
 import GroupCategoryGraph from "./groupCategoryGraph";
-import GroupMonthlyGraph from "./groupMonthlyGraph";
 import { Link as RouterLink } from "react-router-dom";
 import dataConfig from "../../../config.json";
 import { GroupSettlements } from "../settlement";
@@ -448,31 +447,6 @@ export default function ViewGroup() {
               >
                 Group Balance
               </Typography>
-
-              <Typography
-                variant="subtitle"
-                onClick={toggleMySettleView}
-                noWrap
-                sx={{
-                  cursor: "pointer",
-                  fontSize: 18,
-                  width: "100%",
-                  textAlign: "center",
-                  ...(viewSettlement === 2 && {
-                    fontWeight: 800,
-                    borderRadius: 1,
-                    px: 1,
-                    color: (theme) => theme.palette["info"].dark,
-                    bgcolor: (theme) => theme.palette["primary"].lighter,
-                    py: "5px",
-                  }),
-                  ...(!mdUp && {
-                    fontSize: 11,
-                  }),
-                }}
-              >
-                My Balance
-              </Typography>
             </Stack>
             <Grid
               container
@@ -485,9 +459,6 @@ export default function ViewGroup() {
                 ...(mdUp && { px: 6 }),
               }}
             >
-              {viewSettlement == 2 && (
-                <Typography>My Balance - Under development</Typography>
-              )}
               {viewSettlement === 1 && (
                 <Grid item md={12} xs={12}>
                   <GroupSettlements currencyType={group?.groupCurrency} />
@@ -561,9 +532,7 @@ export default function ViewGroup() {
                         item
                         xs={12}
                         md={expFocus || viewSettlement ? 6 : 12}
-                      >
-                        <GroupMonthlyGraph />
-                      </Grid>
+                      ></Grid>
                     </>
                   )}
                 </>
