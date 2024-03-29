@@ -16,8 +16,10 @@ import NavSection from "../../components/NavSection";
 import navConfig from "./NavConfig";
 
 import dataConfig from "../../config.json";
+import backgroundImage from "../../assets/background.jpg";
 
 const RootStyle = styled("div")(({ theme }) => ({
+  backgroundColor: "#E0FFFF",
   [theme.breakpoints.up("lg")]: {
     flexShrink: 0,
     width: 290,
@@ -29,7 +31,7 @@ const AccountStyle = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(2, 2.5),
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.primary["lighter"],
+  backgroundColor: "#E6E6FA",
 }));
 
 DashboardSidebar.propTypes = {
