@@ -5,7 +5,7 @@ export const login = async (formData, setShowAlert, setAlertMessage) => {
   try {
     const { data } = await api.loginIn(formData);
     localStorage.setItem("profile", JSON.stringify(data));
-    window.location.href = configData.DASHBOARD_HOME_URL;
+    window.location.href = configData.DASHBOARD_URL;
     return data;
   } catch (err) {
     setShowAlert(true);

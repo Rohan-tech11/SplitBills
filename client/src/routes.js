@@ -10,6 +10,7 @@ import { EditGroup } from "./components/groups/editGroup";
 import AddExpense from "./components/expense/addExpense";
 import { ViewExpense } from "./components/expense/viewExpense";
 import EditExpense from "./components/expense/editExpense";
+import Dashboard from "./components/dashboard";
 
 import DashboardLayout from "./layouts/dashboard";
 import React from "react";
@@ -20,6 +21,7 @@ export default function Router() {
       path: configData.DASHBOARD_HOME_URL,
       element: <DashboardLayout />,
       children: [
+        { path: configData.DASHBOARD_URL, element: <Dashboard /> },
         { path: configData.CREATE_GROUP_URL, element: <CreateGroup /> },
         { path: configData.VIEW_GROUP_ROUTER_URL, element: <ViewGroup /> },
         { path: configData.USER_GROUPS_URL, element: <Group /> },
