@@ -144,9 +144,7 @@ exports.editGroup = async (req, res) => {
           throw err;
         }
 
-        //Check if a new group member is added to the group and missing in the split
         if (!editGroup.split[0].hasOwnProperty(user)) {
-          //adding the missing members to the split and init with value 0
           editGroup.split[0][user] = 0;
         }
       }

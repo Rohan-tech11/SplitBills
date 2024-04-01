@@ -127,8 +127,7 @@ exports.emailList = async (req, res) => {
 /*
 View User function 
 This function is to view the user details 
-Accepts: user email Id 
-Returns: user details (ensure password is removed)
+
 */
 exports.viewUser = async (req, res) => {
   try {

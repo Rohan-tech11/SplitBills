@@ -75,13 +75,7 @@ exports.addExpense = async (req, res) => {
 
 /*
 Edit Expense function
-This function is used to edit the previously added expense to the group
-Accepts: Group ID not null group ID exist in the DB 
-         Expense ID not null expense ID exist in the DB for the perticular group
-         Expense Name Not Null
-         Expense Desc max 100 limit Expense Amount not null
-         Expense Owner - not null --member in the DB
-         Expense Members not null members in the DB
+
 */
 exports.editExpense = async (req, res) => {
   try {
@@ -214,9 +208,7 @@ exports.deleteExpense = async (req, res) => {
 
 /*
 View Individual Expense
-This function is used to view individual expenses based on the expense ID 
-Accepts: Expense Id
-Returns: Json with the expense details
+
 */
 
 exports.viewExpense = async (req, res) => {
@@ -242,9 +234,7 @@ exports.viewExpense = async (req, res) => {
 
 /*
 View Group Expense function
-This function is used to view all the group expense
-Accepts: Group Id
-Returns: Json with all the expense record and the total expense amount for the group
+
 */
 exports.viewGroupExpense = async (req, res) => {
   try {
@@ -276,9 +266,7 @@ exports.viewGroupExpense = async (req, res) => {
 
 /*
 User Expense function
-This function is used to find all the expense a user is involved in
-Accepts user email Id
-returns: Expenses
+
 */
 exports.viewUserExpense = async (req, res) => {
   try {
@@ -311,9 +299,7 @@ exports.viewUserExpense = async (req, res) => {
 
 /*
 Recent User Expenses function
-This function is used to return the latest 5 expenses a user is involved in 
-Accepts : user email id - check in db if user is present 
-Returns : top 5 most resent expense user is a expenseMember in all the groups  
+
 */
 exports.recentUserExpenses = async (req, res) => {
   try {
@@ -342,9 +328,7 @@ exports.recentUserExpenses = async (req, res) => {
 
 /*
 Category wise group expense calculator function 
-This function is used to retuen the expense spend on each category in a group 
-Accepts : groupID 
-Returns : Each category total exp (group as whole)
+
 */
 exports.groupCategoryExpense = async (req, res) => {
   try {
@@ -378,9 +362,7 @@ exports.groupCategoryExpense = async (req, res) => {
 
 /*
 Group Monthly Expense Function 
-This function is used to get the monthly amount spend in a group 
-Accepts : group Id 
-Returns : Expense per month (current year)
+
 */
 exports.groupMonthlyExpense = async (req, res) => {
   try {
@@ -421,9 +403,7 @@ exports.groupMonthlyExpense = async (req, res) => {
 new Date(new Date().setMonth(new Date().getMonth() - 5));
 /*
 Group Daily Expense Function 
-This function is used to get the dailyly amount spend in a group 
-Accepts : group Id 
-Returns : Expense per day (current year)
+
 */
 exports.groupDailyExpense = async (req, res) => {
   try {
@@ -470,9 +450,7 @@ exports.groupDailyExpense = async (req, res) => {
 
 /*
 Category wise user expense calculator function 
-This function is used to retuen the expense spend on each category for a user
-Accepts : emailID
-Returns : Each category total exp (individaul Expense)
+
 */
 exports.userCategoryExpense = async (req, res) => {
   try {
@@ -506,9 +484,7 @@ exports.userCategoryExpense = async (req, res) => {
 
 /*
 User Monthly Expense Function 
-This function is used to get the monthly amount spend by a user
-Accepts : Email Id 
-Returns : Expense per month
+
 */
 exports.userMonthlyExpense = async (req, res) => {
   try {
@@ -548,9 +524,7 @@ exports.userMonthlyExpense = async (req, res) => {
 
 /*
 User Daily Expense Function 
-This function is used to get the daily amount spend by a user
-Accepts : Email Id 
-Returns : Expense per month
+
 */
 exports.userDailyExpense = async (req, res) => {
   try {
