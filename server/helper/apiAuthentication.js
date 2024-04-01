@@ -19,9 +19,6 @@ exports.validateToken = (req, res, next) => {
     //function to verify the token
     jwt.verify(token, "easesplit", (err, user) => {
       if (err) {
-        logger.error(
-          `URL : ${req.originalUrl} | API Authentication Fail | message: Invalid Token`
-        );
         res.sendStatus(403).json({
           message: "Invalid Token",
         });

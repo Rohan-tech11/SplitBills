@@ -63,9 +63,6 @@ exports.groupUserValidation = async (email, groupId) => {
   groupMembers = groupMembers["groupMembers"];
   if (groupMembers.includes(email)) return true;
   else {
-    logger.warn([
-      `Group User Valdation fail : Group ID : [${groupId}] | user : [${email}]`,
-    ]);
     return false;
   }
 };

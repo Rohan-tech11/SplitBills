@@ -151,9 +151,6 @@ exports.viewUser = async (req, res) => {
       user: user,
     });
   } catch (err) {
-    logger.error(
-      `URL : ${req.originalUrl} | staus : ${err.status} | message: ${err.message}`
-    );
     res.status(err.status || 500).json({
       message: err.message,
     });

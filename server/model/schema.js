@@ -5,7 +5,6 @@ mongoose
   .connect("mongodb://localhost:27017/easesplit")
 
   .catch((err) => {
-    logger.error(`DB Connection Fail | ${err.stack}`);
     console.log(err);
   });
 
