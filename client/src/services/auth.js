@@ -1,6 +1,7 @@
 import * as api from "../api/index";
 import configData from "../config.json";
 
+//login function
 export const login = async (formData, setShowAlert, setAlertMessage) => {
   try {
     const { data } = await api.loginIn(formData);
@@ -18,6 +19,12 @@ export const login = async (formData, setShowAlert, setAlertMessage) => {
   }
 };
 
+//logout function
+export const logout = () => {
+  window.location.href = configData.LOGIN_URL;
+};
+
+//registering the user
 export const register = async (formData, setShowAlert, setAlertMessage) => {
   try {
     //registering user to the DB
@@ -35,6 +42,7 @@ export const register = async (formData, setShowAlert, setAlertMessage) => {
   }
 };
 
+//function to get all user emails
 export const getEmailList = async () => {
   try {
     const data = await api.getEmailList();

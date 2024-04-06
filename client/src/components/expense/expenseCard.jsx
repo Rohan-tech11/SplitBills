@@ -54,6 +54,7 @@ const modelStyle = {
   borderRadius: 1,
 };
 
+//react component function for expense card
 export default function ExpenseCard({
   expenseId,
   expenseName,
@@ -82,6 +83,7 @@ export default function ExpenseCard({
     setDeleteConfirm(false);
   };
 
+  //delete expense backend api calla async
   const apiDeleteCall = async () => {
     await deleteExpenseService({ id: expenseId });
     window.location.reload();

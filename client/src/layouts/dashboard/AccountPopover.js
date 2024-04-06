@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
+import { logout } from "../../services/auth";
+
 // @mui
 import { alpha } from "@mui/material/styles";
 import {
@@ -23,14 +25,6 @@ const MENU_OPTIONS = [
     label: "Home",
     linkTo: configData.DASHBOARD_URL,
   },
-  {
-    label: "Profile",
-    linkTo: configData.USER_PROFILE_URL,
-  },
-  {
-    label: "Settings",
-    linkTo: "#",
-  },
 ];
 
 export default function AccountPopover() {
@@ -49,7 +43,7 @@ export default function AccountPopover() {
   };
 
   const handleLogOut = () => {
-    //logout function in development @Vedanth
+    logout();
   };
 
   return (

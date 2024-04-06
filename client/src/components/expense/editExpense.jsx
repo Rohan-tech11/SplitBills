@@ -55,6 +55,7 @@ export default function EditExpense() {
     expenseType: Yup.string().required("Payment Method is required"),
   });
 
+  //state for form values
   const formik = useFormik({
     initialValues: {
       expenseName: null,
@@ -322,7 +323,7 @@ export default function EditExpense() {
                       {...getFieldProps("expenseType")}
                     >
                       <MenuItem value={"Cash"}>Cash</MenuItem>
-                      <MenuItem value={"UPI Payment"}>UPI Payment</MenuItem>
+                      <MenuItem value={"Interac"}>Interac</MenuItem>
                       <MenuItem value={"Card"}>Card</MenuItem>
                     </Select>
                     <FormHelperText>
